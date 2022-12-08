@@ -13,6 +13,10 @@ import demoVid from "../assets/video/demoVid.mp4"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Collapse from "react-bootstrap/Collapse"
 import Fade from "react-bootstrap/Fade"
+import "@fontsource/permanent-marker"
+import "@fontsource/arvo"
+
+
 
 //        <img src ={tiefBau} alt="Tiefbau Image" className="landingImage" />
 
@@ -58,9 +62,9 @@ export default function Home() {
             />
         </Row>
 
-        <Row lg="1" className="my-5 text-center">
+        <Row lg="1" className="my-5 text-center bg-dark p-4" style={{color: "white", width:"100%", borderRadius:"10px"}}>
           <Col>
-            <h1 > <u> Gewusst wo! </u></h1>
+            <h1 style={{fontSize:"4.2em"}} id="firstHeader"> <u> Gewusst wo! </u></h1>
             <h1 className="mt-4" >Innovative Lösungen für Leitungsortung und Bodensondierung! </h1>
           </Col>
         </Row>
@@ -77,8 +81,8 @@ export default function Home() {
           </Carousel.Item>
 
           {images.map((img) => {return(
-              <Carousel.Item  key={img.contentful_id} style={{}}> 
-                <GatsbyImage  image={img.gatsbyImageData} alt={img.filename}  /> 
+              <Carousel.Item  key={img.contentful_id}> 
+                <GatsbyImage  image={img.gatsbyImageData} alt={img.filename}  style={{minHeight:"350px"}} /> 
               </Carousel.Item>
               )})
             }
@@ -107,13 +111,42 @@ export default function Home() {
               <h2>Eine genaue Leitungsortung senkt das Risiko, die Kosten und erhöht die Produktivität maßgeblich!</h2>
             </Row>
 
+
+            <Row style={{ marginBottom:"5vh", minWidth:"50vw"}}>
+                <StaticImage src="../assets/imagesStatic/colorbar.png" alt="divider" className="mt-5 mb-3" />
+                <h2 className="mt-5 text-center">Wir arbeiten individuell...</h2>
+            </Row>
+
+            <Row xs={1} lg={3} className="my-5 justify-content-between p-3" style={{ border:"2px solid grey", borderRadius:"10px"}} >
+              <Col >
+                <StaticImage src="../assets/imagesStatic/DS200PNG.png" alt="ds2000" height={280} />
+                <h4 className="text-center">Im kleinen ....</h4>
+              </Col>
+              <Col >
+                <StaticImage src="../assets/imagesStatic/streamCPNG.png" alt="ds2000" height={280} />
+                <h4 className="text-center">.......</h4>
+              </Col>
+              <Col >
+                <StaticImage src="../assets/imagesStatic/StreamUPPNG.png" alt="ds2000" height={500} />
+                <h4 className="text-center">... und im großen Stil!</h4>
+              </Col>
+            </Row>
+            <Row className="my-5">
+              <Fade in ={reachedBottom}>
+                <Button as={Link} to="/leistungen" className="p-3 customB" style={{fontWeight:"bold", fontSize:"1.6em"}}>Leistungen im Detail</Button>
+              </Fade>
+            </Row>
+            <Row className="my-5" xs={1} style={{minWidth:"50vw"}} >
+              <StaticImage src="../assets/imagesStatic/colorbar.png" alt="divider"  />
+            </Row>
+
             <Row className="my-5">
               <Fade in ={reachedBottom}>
                 <Button as={Link} to="/kontakt" className="p-3 customB" style={{fontWeight:"bold", fontSize:"1.6em"}}>Kontakt aufnehmen</Button>
               </Fade>
             </Row>
 
-        <Row className="mt-3">
+        <Row className="mt-5">
           <h1 className="my-5" style={{textAlign:"center"}}><BiNews /> NEWS</h1>
         </Row>
         <Row xs="1" style={{maxWidth:"1000px"}}>
@@ -133,9 +166,14 @@ const Wrapper= styled.section`
   p{
     text-align: justify;
     font-size: 1.3em;
+    font-family: Arvo, serif;
   }
   .customB:hover{
     box-shadow: 7px 5px black;
+  }
+
+  #firstHeader{
+    font-family: Permanent Marker, cursive;
   }
 `
 

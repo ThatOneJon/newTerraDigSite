@@ -5,6 +5,7 @@ import Navigation from "./nav";
 import Footer from "./footer";
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
+import "@fontsource/arvo"
 
 
 export default function Layout({children}){
@@ -27,6 +28,9 @@ const Wrapper = styled.section`
     .mains{
         background-color:#e6ecff;
         height: 100%;
+    }
+    p{
+        font-family: Arvo, serif;
     }
    
 `
