@@ -149,13 +149,13 @@ export default function Home() {
         <Row className="mt-5">
           <h1 className="my-5" style={{textAlign:"center"}}><BiNews /> NEWS</h1>
         </Row>
-        <Row xs="1" style={{maxWidth:"1000px"}}>
-          <Collapse in={reachedBottom} timeout={600}>
-            <div>
+        <Collapse in={reachedBottom} timeout={600}>
+        <div >
+          <Row lg ="3" xs="1" style={{maxWidth:"2100px"}}>
               <News />
-            </div>
-          </Collapse>
-        </Row>
+          </Row>
+        </div>
+        </Collapse>
       </Container>
     </Wrapper>
   </Layout>
