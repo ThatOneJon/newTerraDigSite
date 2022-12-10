@@ -16,8 +16,6 @@ import Fade from "react-bootstrap/Fade"
 import "@fontsource/permanent-marker"
 import "@fontsource/arvo"
 
-
-
 //        <img src ={tiefBau} alt="Tiefbau Image" className="landingImage" />
 
 const query = graphql`
@@ -44,6 +42,7 @@ export default function Home() {
     })
   })
 
+
   const rawData = useStaticQuery(query)
   const images = rawData.allContentfulLandingPageImages.nodes[0].imagesLanding
   let video = <video controls>
@@ -61,14 +60,12 @@ export default function Home() {
             style={{minHeight:"100px"}}
             />
         </Row>
-
         <Row lg="1" className="my-5 text-center bg-dark p-4" style={{color: "white", width:"100%", borderRadius:"10px"}}>
           <Col>
             <h1 style={{fontSize:"4.2em"}} id="firstHeader"> <u> Gewusst wo! </u></h1>
             <h1 className="mt-4" >Innovative Lösungen für Leitungsortung und Bodensondierung! </h1>
           </Col>
         </Row>
-
         <Row className="my-5">
         <Carousel >
           <Carousel.Item interval={5000}>
@@ -117,7 +114,7 @@ export default function Home() {
                 <h2 className="mt-5 text-center">Wir arbeiten individuell...</h2>
             </Row>
 
-            <Row xs={1} lg={3} className="my-5 justify-content-between p-3" style={{ border:"2px solid grey", borderRadius:"10px"}} >
+            <Row xs={1} lg={3} className="mb-5 justify-content-between p-3" style={{ border:"2px solid grey", borderRadius:"10px"}} >
               <Col >
                 <StaticImage src="../assets/imagesStatic/DS200PNG.png" alt="ds2000" height={280} />
                 <h4 className="text-center">Im kleinen ....</h4>
@@ -131,6 +128,9 @@ export default function Home() {
                 <h4 className="text-center">... und im großen Stil!</h4>
               </Col>
             </Row>
+            <Row style={{width:"50vw", height:"55vh", minWidth:"400px"}}>
+              <iframe src= "https://velvety-faloodeh-6ce944.netlify.app" title ="3d" />
+            </Row>
             <Row className="my-5">
               <Fade in ={reachedBottom}>
                 <Button as={Link} to="/leistungen" className="p-3 customB" style={{fontWeight:"bold", fontSize:"1.6em"}}>Leistungen im Detail</Button>
@@ -139,13 +139,11 @@ export default function Home() {
             <Row className="my-5" xs={1} style={{minWidth:"50vw"}} >
               <StaticImage src="../assets/imagesStatic/colorbar.png" alt="divider"  />
             </Row>
-
             <Row className="my-5">
               <Fade in ={reachedBottom}>
                 <Button as={Link} to="/kontakt" className="p-3 customB" style={{fontWeight:"bold", fontSize:"1.6em"}}>Kontakt aufnehmen</Button>
               </Fade>
             </Row>
-
         <Row className="mt-5">
           <h1 className="my-5" style={{textAlign:"center"}}><BiNews /> NEWS</h1>
         </Row>
