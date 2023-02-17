@@ -16,7 +16,8 @@ module.exports = {
     `gatsby-plugin-styled-components`, 
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`, 
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`, 
     {
     resolve: `gatsby-source-filesystem`,
     options: {
@@ -30,5 +31,12 @@ module.exports = {
       accessToken: process.env.TerraDigital_Key,
     },
   },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `content`,
+      path: `${__dirname}/src/content`,
+    },
+  }
   ],
 }

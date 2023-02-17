@@ -45,9 +45,7 @@ export default function Home() {
 
   const rawData = useStaticQuery(query)
   const images = rawData.allContentfulLandingPageImages.nodes[0].imagesLanding
-  let video = <video controls>
-  <source src={demoVid} type="video/mp4" />
-  </video>
+
 
   return (
   <Layout>

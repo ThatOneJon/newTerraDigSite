@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col"
 import colorbar from "../assets/imagesStatic/colorbar.png"
 import {Link, graphql,useStaticQuery} from "gatsby"
 import Accordion from "react-bootstrap/Accordion"
+import Reactmarkdown from "react-markdown"
 
 const query = graphql`
   query {
@@ -42,7 +43,7 @@ const jobListings = rawData.allContentfulJobListing.nodes
                     <Accordion.Item eventKey={jobListings.indexOf(listing)}>
                     <Accordion.Header><b>{listing.jobTitle}</b></Accordion.Header>
                     <Accordion.Body>
-                    <h2 className="mt-4"><u>{listing.jobTitle}</u></h2> <p>{listing.childContentfulJobListingDescriptionTextNode.description}</p>
+                    <h2 className="mt-4"><u>{listing.jobTitle}</u></h2> <Reactmarkdown>{listing.childContentfulJobListingDescriptionTextNode.description}</Reactmarkdown>
                     <p>Wir freuen uns, Sie kennenzulernen! Senden Sie uns Ihre vollständigen Bewerbungsunterlagen bitte per E- Mail an: <b><u>info@terra-digital.de</u></b> </p>
                     <p>Bitte beachten Sie unsere Hinweise zum<Link to="/datenschutz">Datenschutz</Link></p>
                     </Accordion.Body>
